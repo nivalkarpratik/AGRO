@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Grow with Agro</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<style>
+
+.container12 {
+  display: flex;
+  gap: 35px;
+  padding: 30px;
+}
+.weather-input {
+  width: 550px;
+}
+.weather-input input {
+  height: 46px;
+  width: 100%;
+  outline: none;
+  font-size: 1.07rem;
+  padding: 0 17px;
+  margin: 10px 0 20px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.weather-input input:focus {
+  padding: 0 16px;
+  border: 2px solid #5372F0;
+}
+.weather-input .separator {
+  height: 1px;
+  width: 100%;
+  margin: 25px 0;
+  background: #BBBBBB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weather-input .separator::before{
+  content: "or";
+  color: #6C757D;
+  font-size: 1.18rem;
+  padding: 0 15px;
+  margin-top: -4px;
+  background: #E3F2FD;
+}
+.weather-input button {
+  width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #fff;
+  background: #5372F0;
+  transition: 0.2s ease;
+}
+.weather-input .search-btn:hover {
+  background: #2c52ed;
+}
+.weather-input .location-btn {
+  background: #6C757D;
+}
+.weather-input .location-btn:hover {
+  background: #5c636a;
+}
+.weather-data {
+  width: 100%;
+}
+.weather-data .current-weather {
+  color: #fff;
+  background: #5372F0;
+  border-radius: 5px;
+  padding: 20px 70px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.current-weather h2 {
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+.weather-data h6 {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.current-weather .icon {
+  text-align: center;
+}
+.current-weather .icon img {
+  max-width: 120px;
+  margin-top: -15px;
+}
+.current-weather .icon h6 {
+  margin-top: -10px;
+  text-transform: capitalize;
+}
+.days-forecast h2 {
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+.days-forecast .weather-cards {
+  display: flex;
+  gap: 20px;
+}
+.weather-cards .card {
+  color: #fff;
+  padding: 18px 16px;
+  list-style: none;
+  width: calc(100% / 5);
+  background: #6C757D;
+  border-radius: 5px;
+}
+.weather-cards .card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.weather-cards .card img {
+  max-width: 70px;
+  margin: 5px 0 -12px 0;
+}
+
+@media (max-width: 1400px) {
+  .weather-data .current-weather {
+    padding: 20px;
+  }
+  .weather-cards {
+    flex-wrap: wrap;
+  }
+  .weather-cards .card {
+    width: calc(100% / 4 - 15px);
+  }
+}
+@media (max-width: 1200px) {
+  .weather-cards .card {
+    width: calc(100% / 3 - 15px);
+  }
+}
+@media (max-width: 950px) {
+  .weather-input {
+    width: 450px;
+  }
+  .weather-cards .card {
+    width: calc(100% / 2 - 10px);
+  }
+}
+@media (max-width: 750px) {
+  
+  .container12 {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+  .weather-input {
+    width: 100%;
+  }
+  .weather-data h2 {
+    font-size: 1.35rem;
+  }
+}
+
+
+
+
+
+
+
+
+.container123 {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+/* Add this CSS code to your existing styles in the <style> tag */
+.crop-prediction {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 2px solid #5372F0; /* Add a border around the section */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.crop-prediction h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#crop-prediction-result {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #5372F0; /* You can choose your desired text color */
+}
+
+
+
+
+
+
+  </style>
+
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid px-1 d-none d-lg-block">
+        <div class="row gx-3 py-1 align-items-center">
+            <div class="col-lg-3">
+                <div class="d-flex align-items-center justify-content-start">
+                     <img src="img/logo.png" alt="" height="80px" width="180px">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a href="index.html" class="navbar-brand ms-lg-5">
+                        <h1 class="m-0 display-6 text-primary"><span class="text-secondary">GROW V</span>V AGRO🌱</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="d-flex align-items-center justify-content-end">
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+   <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-3">
+        <a href="index.html" class="navbar-brand d-flex d-lg-none">
+            <h1 class="m-0 display-6 text-primary"><span class="text-secondary">GROW V</span>V AGRO🌱</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-1 ">
+                <a href="http://127.0.0.1:5000" class="nav-item nav-link">Crops Suggestions</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="team.html" class="nav-item nav-link">The Team</a>
+                <a href="http://localhost/Agronew/index.html" class="nav-item nav-link">Sale/Buy Crops</a>
+                <a href="http://127.0.0.1:5001/" class="nav-item nav-link">Crop's Dr.</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/logo.png" alt="Image">
+                    <div class="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
+                        <div class="text-start p-5" style="max-width: 900px;">
+                           
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+    <!-- Facts Start -->
+    <div class="container-fluid bg-primary facts py-1 mb-2">
+        <div class="container py-2">
+            <div class="row gx-3 gy-2">
+                <div class="col-lg-2 col-md-3">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+
+    <!-- About Start -->
+    <div class="container-fluid about pt-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="d-flex h-100 border border-5 border-primary border-bottom-0 pt-4">
+                        <img class="img-fluid mt-auto mx-auto" src="img/about.jpg">
+                    </div>
+                </div>
+                <div class="col-lg-6 pb-5">
+                    <div class="mb-3 pb-2">
+                        <h6 class="text-primary text-uppercase">About Us</h6>
+                        <h1 class="display-5">We Produce Organic Food For Your Family</h1>
+                    </div>
+                    <p class="mb-4">Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et tempor sit. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet magna</p>
+                    <div class="row gx-5 gy-4">
+                        <div class="col-sm-6">
+                            <i class="fa fa-seedling display-1 text-secondary"></i>
+                            <h4>100% Organic</h4>
+                            <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <i class="fa fa-award display-1 text-secondary"></i>
+                            <h4>Award Winning</h4>
+                            <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+  
+
+
+<!-- END -->
+    
+       <!-- Facts Start -->
+    <div class="container-fluid bg-primary facts py-4 mb-3">
+        <div class="container py-2">
+            <div class="row gx-3 gy-2">
+                <div class="col-lg-2 col-md-3">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+
+
+    
+<!-- Start -->
+
+
+
+   <center> <h1>Grow with Agrodeal Weather Dashboard</h1> </center>
+    <div class="container12">
+      <div class="weather-input">
+        <h3>Enter a City Name</h3>
+        <input class="city-input" type="text" placeholder="E.g.,Mumbai,Delhi">
+        <button class="search-btn">Search</button>
+        <div class="separator"></div>
+        <button class="location-btn">Use Current Location</button>
+      </div>
+      <div class="weather-data">
+        <div class="current-weather">
+          <div class="details">
+            <h2>_______ ( ______ )</h2>
+            <h6>Temperature: __°C</h6>
+            <h6>Wind: __ M/S</h6>
+            <h6>Humidity: __%</h6>
+          </div>
+        </div>
+        <div class="days-forecast">
+          <h2>5-Day Forecast</h2>
+          <ul class="weather-cards">
+            <li class="card">
+              <h3>( ______ )</h3>
+              <h6>Temp: __C</h6>
+              <h6>Wind: __ M/S</h6>
+              <h6>Humidity: __%</h6>
+            </li>
+            <li class="card">
+              <h3>( ______ )</h3>
+              <h6>Temp: __C</h6>
+              <h6>Wind: __ M/S</h6>
+              <h6>Humidity: __%</h6>
+            </li>
+            <li class="card">
+              <h3>( ______ )</h3>
+              <h6>Temp: __C</h6>
+              <h6>Wind: __ M/S</h6>
+              <h6>Humidity: __%</h6>
+            </li>
+            <li class="card">
+              <h3>( ______ )</h3>
+              <h6>Temp: __C</h6>
+              <h6>Wind: __ M/S</h6>
+              <h6>Humidity: __%</h6>
+            </li>
+            <li class="card">
+              <h3>( ______ )</h3>
+              <h6>Temp: __C</h6>
+              <h6>Wind: __ M/S</h6>
+              <h6>Humidity: __%</h6>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+   
+
+
+    <!-- <div class="container123">
+      <h1>Crop Recommendation</h1>
+      <p>Temperature: <span id="temperatureValue">25</span>°C</p>
+      <p>Humidity: <span id="humidityValue">60</span>%</p>
+      <p>Recommended Crops:</p>
+      <div id="cropRecommendation"></div>
+  </div>
+ -->
+
+
+
+
+
+
+<!-- Add this HTML code within the "weather-data" div -->
+<!-- <div class="crop-prediction">
+  <h2>Crop Prediction</h2>
+  <p id="crop-prediction-result">Crop prediction will be displayed here.</p>
+</div> -->
+
+
+
+
+    <script lang="JavaScript">
+        const cityInput = document.querySelector(".city-input");
+const searchButton = document.querySelector(".search-btn");
+const locationButton = document.querySelector(".location-btn");
+const currentWeatherDiv = document.querySelector(".current-weather");
+const weatherCardsDiv = document.querySelector(".weather-cards");
+
+const API_KEY = "32187bdcc880be018c7fc27cadbd1411"; // API key for OpenWeatherMap API
+
+const createWeatherCard = (cityName, weatherItem, index) => {
+    if(index === 0) { // HTML for the main weather card
+        return `<div class="details">
+                    <h2>${cityName} (${weatherItem.dt_txt.split(" ")[0]})</h2>
+                    <h6>Temperature: ${(weatherItem.main.temp - 273.15).toFixed(2)}°C</h6>
+                    <h6>Wind: ${weatherItem.wind.speed} M/S</h6>
+                    <h6>Humidity: ${weatherItem.main.humidity}%</h6>
+                </div>
+                <div class="icon">
+                    <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@4x.png" alt="weather-icon">
+                    <h6>${weatherItem.weather[0].description}</h6>
+                </div>`;
+    } else { // HTML for the other five day forecast card
+        return `<li class="card">
+                    <h3>(${weatherItem.dt_txt.split(" ")[0]})</h3>
+                    <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@4x.png" alt="weather-icon">
+                    <h6>Temp: ${(weatherItem.main.temp - 273.15).toFixed(2)}°C</h6>
+                    <h6>Wind: ${weatherItem.wind.speed} M/S</h6>
+                    <h6>Humidity: ${weatherItem.main.humidity}%</h6>
+                </li>`;
+    }
+}
+
+const getWeatherDetails = (cityName, latitude, longitude) => {
+    const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
+
+    fetch(WEATHER_API_URL).then(response => response.json()).then(data => {
+        // Filter the forecasts to get only one forecast per day
+        const uniqueForecastDays = [];
+        const fiveDaysForecast = data.list.filter(forecast => {
+            const forecastDate = new Date(forecast.dt_txt).getDate();
+            if (!uniqueForecastDays.includes(forecastDate)) {
+                return uniqueForecastDays.push(forecastDate);
+            }
+        });
+
+        // Clearing previous weather data
+        cityInput.value = "";
+        currentWeatherDiv.innerHTML = "";
+        weatherCardsDiv.innerHTML = "";
+
+        // Creating weather cards and adding them to the DOM
+        fiveDaysForecast.forEach((weatherItem, index) => {
+            const html = createWeatherCard(cityName, weatherItem, index);
+            if (index === 0) {
+                currentWeatherDiv.insertAdjacentHTML("beforeend", html);
+            } else {
+                weatherCardsDiv.insertAdjacentHTML("beforeend", html);
+            }
+        });        
+    }).catch(() => {
+        alert("An error occurred while fetching the weather forecast!");
+    });
+}
+
+const getCityCoordinates = () => {
+    const cityName = cityInput.value.trim();
+    if (cityName === "") return;
+    const API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
+    
+    // Get entered city coordinates (latitude, longitude, and name) from the API response
+    fetch(API_URL).then(response => response.json()).then(data => {
+        if (!data.length) return alert(`No coordinates found for ${cityName}`);
+        const { lat, lon, name } = data[0];
+        getWeatherDetails(name, lat, lon);
+    }).catch(() => {
+        alert("An error occurred while fetching the coordinates!");
+    });
+}
+
+const getUserCoordinates = () => {
+    navigator.geolocation.getCurrentPosition(
+        position => {
+            const { latitude, longitude } = position.coords; // Get coordinates of user location
+            // Get city name from coordinates using reverse geocoding API
+            const API_URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
+            fetch(API_URL).then(response => response.json()).then(data => {
+                const { name } = data[0];
+                getWeatherDetails(name, latitude, longitude);
+            }).catch(() => {
+                alert("An error occurred while fetching the city name!");
+            });
+        },
+        error => { // Show alert if user denied the location permission
+            if (error.code === error.PERMISSION_DENIED) {
+                alert("Geolocation request denied. Please reset location permission to grant access again.");
+            } else {
+                alert("Geolocation request error. Please reset location permission.");
+            }
+        });
+
+
+      }
+
+
+
+
+locationButton.addEventListener("click", getUserCoordinates);
+searchButton.addEventListener("click", getCityCoordinates);
+cityInput.addEventListener("keyup", e => e.key === "Enter" && getCityCoordinates());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const predictCrops = (temperature, humidity) => {
+//   const link = document.createElement("a");
+//     if (temperature >= 30 && humidity >= 60) {
+//         return "Sugarcane and Rice<a href='sugarcane.html'></a>";
+//         link.textContent = "Click here to learn more";
+//         link.href = "https://example.com";
+
+//     } else if (temperature >= 25 || humidity <= 50) {
+//         return "Wheat and Corn";
+//         link.textContent = "Click here to learn more";
+//         link.href = "https://example.com";
+//     } else {
+//         return "No specific crop recommendation at this time.";
+//         link.textContent = "Click here to learn more";
+//         link.href = "https://example.com";
+//     }
+// };
+
+
+
+const predictCrops = (temperature, humidity) => {
+
+function conditionalLink() {
+    if (temperature >= 30 && humidity >= 60) {
+        // Perform some actions or calculations here
+
+        // Create an anchor (link) element
+        const link = document.createElement("a");
+        link.textContent = "gehu";
+        link.href = "sugarcane.html"; // Replace with your desired URL
+
+        // Append the link element to the document or a specific element
+        document.body.appendChild(link); // You can replace document.body with a specific element if needed
+
+        // Return a value or result
+        return "Condition is met, and here is the result";
+    } 
+    
+    else if (temperature >= 25 || humidity <= 50) {
+      const link = document.createElement("a");
+        link.textContent = "bajari";
+        link.textContent = "cotton";
+        link.href = "sugarcane.html"; // Replace with your desired URL
+
+        // Append the link element to the document or a specific element
+        document.body.appendChild(link); // You can replace document.body with a specific element if needed
+
+        // Return a value or result
+        return "Condition is met, and here is the result";
+    }
+    else if (temperature >= 25 || humidity <= 50) {
+      const link = document.createElement("a");
+        link.textContent = "cotton";
+        link.href = "sugarcane.html"; // Replace with your desired URL
+
+        // Append the link element to the document or a specific element
+        document.body.appendChild(link); // You can replace document.body with a specific element if needed
+
+        // Return a value or result
+        return "Condition is met, and here is the result";
+    }
+    else {
+        // Perform other actions or calculations here
+
+        // Return a different value or result
+        return "Condition is not met, and here is a different result";
+    }
+}
+
+// Call the function to conditionally add the link
+conditionalLink();
+};
+
+
+
+
+
+
+
+
+// // Add this code at the end of your existing JavaScript code
+
+// // Function to predict crops based on temperature and humidity
+
+// const predictCrops = (temperature, humidity) => {
+//     if (temperature >= 30 && humidity >= 60) {
+//         return "Sugarcane and Rice<a href='sugarcane.html'></a>";
+
+//     } else if (temperature >= 25 || humidity <= 50) {
+//         return "Wheat and Corn";
+//     } else {
+//         return "No specific crop recommendation at this time.";
+//     }
+// };
+
+// // Function to update the crop prediction result
+const updateCropPredictionResult = (temperature, humidity) => {
+    const cropPredictionResult = document.getElementById("crop-prediction-result");
+    const cropPrediction = predictCrops(temperature, humidity);
+    cropPredictionResult.textContent = `Recommended Crops: ${cropPrediction}`;
+};
+
+// // Add an event listener to update crop prediction when weather data is fetched
+searchButton.addEventListener("click", () => {
+    getCityCoordinates();
+    updateCropPredictionResult(25, 60); // You can replace these values with actual temperature and humidity values from the weather data.
+});
+</script>
+
+
+
+
+
+<!-- END -->
+    
+       <!-- Facts Start -->
+    <div class="container-fluid bg-primary facts py-4 mb-3">
+        <div class="container py-2">
+            <div class="row gx-3 gy-2">
+                <div class="col-lg-2 col-md-3">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+<!-- END -->
+
+<!-- start -->
+
+    <div class = "container my-3 mt-3">
+
+     <center> <h1 class="text-success">Crop Recommendation System <span class="text-success">🌱</span></h1></center>
+     <br>
+
+      <form action="/predict" method="POST">
+          <div class="row">
+              <div class="col-md-4">
+                    <label for="Nitrogen">Nitrogen</label>
+                    <input type="number" id="Nitrogen" name="Nitrogen" placeholder="Enter Nitrogen" class="form-control" required step="0">
+                </div>
+               <div class="col-md-4">
+                    <label for="Phosporus">Phosphorus</label>
+                    <input type="number" id="Phosporus" name="Phosporus" placeholder="Enter Phosphorus" class="form-control" required step="00">
+                </div>
+                <div class="col-md-4">
+                    <label for="Potassium">Potassium</label>
+                    <input type="number" id="Potassium" name="Potassium" placeholder="Enter Potassium" class="form-control" required step="0">
+                </div>
+          </div>
+
+          <div class="row mt-4">
+                <div class="col-md-4">
+                    <label for="Temperature">Temperature</label>
+                    <input type="number" step="0.01" id="Temperature" name="Temperature" placeholder="Enter Temperature in °C" class="form-control" required step="0">
+                </div>
+                <div class="col-md-4">
+                    <label for="Humidity">Humidity</label>
+                    <input type="number" step="0.01" id="Humidity" name="Humidity" placeholder="Enter Humidity in %" class="form-control" required step="0">
+                </div>
+                <div class="col-md-4">
+                    <label for="pH">pH</label>
+                    <input type="number" step="0.01" id="Ph" name="Ph" placeholder="Enter pH value" class="form-control" required step="0">
+                </div>
+            </div>
+
+          <div class="row mt-4">
+                <div class="col-md-4">
+                    <label for="Rainfall">Rainfall</label>
+                    <input type="number" step="0.01" id="Rainfall" name="Rainfall" placeholder="Enter Rainfall in mm" class="form-control" required>
+                </div>
+            </div>
+
+
+
+           <div class="row mt-4">
+
+           <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Get Recommendation</button>
+            </div>
+            </div>
+      </form>
+</div>
+
+  
+
+
+
+<!-- END -->
+    
+       <!-- Facts Start -->
+    <div class="container-fluid bg-primary facts py-4 mb-3">
+        <div class="container py-2">
+            <div class="row gx-3 gy-2">
+                <div class="col-lg-2 col-md-3">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+     <!-- Team Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="mx-auto text-center mb-5" style="max-width: 500px;">
+                <h6 class="text-primary text-uppercase">The Team</h6>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="row g-0">
+                        <div class="col-10">
+                            <div class="position-relative">
+                                <img class="img-fluid w-100" src="img/admin.jpg" alt="">
+                                <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
+                                    <h4 class="text-white">Pranav Waghmare</h4>
+                                    <span class="text-white">Leader</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-twitter text-secondary"></i></a>
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-facebook-f text-secondary"></i></a>
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-linkedin-in text-secondary"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="row g-0">
+                        <div class="col-10">
+                            <div class="position-relative">
+                                <img class="img-fluid w-100" src="img/admin.jpg" alt="">
+                                <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
+                                    <h4 class="text-white">Pratik Nivalkar</h4>
+                                    <span class="text-white">UI Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-twitter text-secondary"></i></a>
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-facebook-f text-secondary"></i></a>
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-linkedin-in text-secondary"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="row g-0">
+                        <div class="col-10">
+                            <div class="position-relative">
+                                <img class="img-fluid w-100" src="img/admin.jpg" alt="">
+                                <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
+                                    <h4 class="text-white">Barun Mishra</h4>
+                                    <span class="text-white">Ui Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-twitter text-secondary"></i></a>
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-facebook-f text-secondary"></i></a>
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-linkedin-in text-secondary"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <center>
+                <div class="col-lg-4 col-md-6">
+                    <div class="row g-0">
+                        <div class="col-10">
+                            <div class="position-relative">
+                                <img class="img-fluid w-100" src="img/admin.jpg" alt="">
+                                <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
+                                    <h4 class="text-white">Kaushal Chaudhari</h4>
+                                    <span class="text-white">Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-twitter text-secondary"></i></a>
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-facebook-f text-secondary"></i></a>
+                                <a class="btn btn-square rounded-circle bg-white" href="index.html"><i class="fab fa-linkedin-in text-secondary"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div></center>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+    
+
+    <div class="container-fluid bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; <a class="text-secondary fw-bold" href="">GROW V</span>V AGRO🌱 </a>. All Rights Reserved.<a class="text-secondary fw-bold" href=""></a></p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

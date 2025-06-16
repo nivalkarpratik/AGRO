@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Round Buffer</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .buffer-container {
+        text-align: center;
+    }
+    
+    .round-buffer {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 4px solid #3498db;
+        border-top: 4px solid transparent;
+        animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+</style>
+<body>
+    <div class="buffer-container">
+        <div class="round-buffer" id="roundBuffer"></div>
+        <button id="startButton">Start Buffer</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const roundBuffer = document.getElementById('roundBuffer');
+            const startButton = document.getElementById('startButton');
+        
+            startButton.addEventListener('click', function () {
+                roundBuffer.style.display = 'inline-block';
+            });
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Details</title>
+</head>
+<body>
+
+    <h1>{{ crop_name }} Details</h1>
+    <img src="{{ url_for('static', filename='images/' + crop_name.lower() + '_image.jpg') }}" alt="{{ crop_name }}" class="crop-image">
+
+    <p>{{ crop_description }}</p>
+<!-- 
+    <a href="{{ url_for('crop_page', crop_name=crop_name) }}">Go to {{ crop_name }} page</a>
+    <img src="{{ url_for('static', filename='images/' + '_image.jpg') }}" alt="{{ crop }}" class="crop-image"> -->
+    <a href="{{ url_for('crop_page', crop_name=crop_name) }}">Go to {{ crop_name }} page</a>
+    <!-- <img src="{{ url_for('static', filename='images/' + crop_name.lower() + '_image.jpg') }}" alt="{{ crop_name }}" class="crop-image"> -->
+    
+</body>
+</html>

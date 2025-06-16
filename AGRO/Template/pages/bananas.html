@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bananas: Growing Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #FFD700;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #FFD700;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: #FFD700;
+            text-align: center;
+            padding: 10px 0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>All About Bananas</h1>
+    </header>
+    <main>
+        <section>
+            <h2>About Bananas</h2>
+            <p>Bananas are delicious and nutritious fruits known for their sweet taste and portability. They are a great source of essential nutrients like potassium, vitamins, and dietary fiber. Bananas are one of the most consumed fruits globally and are used in various culinary applications.</p>
+            <!-- <img src="bananas.jpg" alt="Bunch of Bananas"max-height="500px" width="400px"> -->
+            <p>Image Path: {{ url_for('static', filename='images/' + '_image.jpg') }}</p>
+            <img src="{{ url_for('static', filename='images/' +'_image.jpg') }}" class="crop-image" max-height="500px" width="400px">
+            
+            <h2>Steps to Grow Bananas</h2>
+            <ol>
+                <li>Choose a tropical or subtropical location with well-drained soil and plenty of sunlight for banana cultivation.</li>
+                <li>Plant banana pups or young plants in the ground, ensuring proper spacing between plants.</li>
+                <li>Water the plants consistently to keep the soil moist but not waterlogged.</li>
+                <li>Fertilize banana plants with a balanced fertilizer to support growth and fruit production.</li>
+                <li>Protect the plants from pests and diseases through regular monitoring and treatment.</li>
+                <li>Harvest bananas when the fruits are fully mature and have a yellow color, typically within 9-12 months.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Extra Information</h2>
+            <p>Bananas are not only tasty but also packed with energy. They are a convenient snack and a versatile ingredient in baking and smoothies. Bananas are known for their high potassium content, which plays a crucial role in maintaining heart health and blood pressure.</p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2023 All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation</title>
+</head>
+<body>
+    <form action="/predict" method="POST">
+        <div class="container p-5">
+            <div class="row shadow-lg p-5 inline-form">
+                <h2 class="text-center text-primary fw-bold mt-5 text-primary">Inline Form</h2>
+                <p class="my-3 text-center text-secondary fw-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet</p>
+                <div class="row justify-content-center my-4">
+                    <div class="col-5">
+                        <input type="text" id="dist" name="dist" class="form-control" placeholder="Enter district" aria-label="District">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <h1>Crop Recommendation Result</h1>
+    {% if result %}
+        <p>Recommended Crops: {{ result }}</p>
+        <p>Click on the crop name or image to learn more:</p>
+        <div class="crop-container">
+            {% for crop in result.split(', ') %}
+                <div class="crop-item">
+                    <a href="{{ url_for('crop_details', crop_name=crop) }}" class="crop-link">
+                        <img src="{{ url_for('static', filename='images/' + crop.lower() + '_image.jpg') }}" alt="{{ crop }}" class="crop-image">
+                        <p>{{ crop }}</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No suitable crops found for the given conditions.</p>
+    {% endif %}
+</body>
+</html>
