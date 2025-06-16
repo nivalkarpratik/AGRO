@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Comaptible" content="IE=edge">
+    <title>Learn DS</title>
+    <meta name="desciption" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(window).on('scroll', function () {
+            if ($(window).scrollTop()) {
+                $('nav').addClass('black');
+            } else {
+                $('nav').removeClass('black');
+            }
+        })
+    </script>
+</head>
+
+<body style="background-color: black;">
+
+    <!-- Navigation Bar -->
+    <header id="header">
+        <nav>
+            <div class="logo"><img src="images/icon/logo - Copy.png" alt="logo"></div>
+            <ul>
+                <li><a class="active" href="">Home</a></li>
+                <li><a href="#learnds_section">Learn Data Structures</a></li>
+                <li><a href="#team_section">Practice Tab</a></li>
+                <li><a href="#study_section">Study Materials</a></li>
+                <li><a href="#about_section">About Us</a></li>
+                <li><a href="#contactus_section">Contact Us</a></li>
+
+            </ul>
+            <a class="get-started" href="login.html">Get Started</a>
+            <img src="images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+
+        </nav>
+        <div class="head-container">
+            <div class="quote">
+                <p style="color: white;">The beautiful thing about learning is that nobody can take it away from you.😎
+                </p>
+                <h5 style="color: white;">
+
+                    Data dominates. If you've chosen the right data structures and organized things well, the algorithms
+                    will almost always
+                    be self-evident. Data structures and Algorithms, are central to Programming.
+                </h5>
+                <div class="play" style="color: white;">
+                    <img src="images/icon/play.png" alt="play" style="color: white;"> <span><a
+                            href="https://www.youtube.com/watch?v=d_XvFOkQz5k" target="_blank" style="color: white;">Watch DS's Real Life
+                            Examples Now</a></span>
+                </div>
+            </div>
+            <div class="svg-image">
+                <img src="images/extra/svg1.jpg" alt="svg">
+            </div>
+        </div>
+        <div class="side-menu" id="side-menu">
+            <div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
+            <div class="user">
+                <img src="images/creator/roshan.jpeg" alt="Username">
+                <p>lazysauras</p>
+            </div>
+
+            <ul>
+                <li><a href="#about_section">About</a></li>
+                <li><a href="#portfolio_section">Portfolio</a></li>
+                <li><a href="#team_section">Team</a></li>
+                <li><a href="#learnds_section">Services</a></li>
+                <li><a href="#contactus_section">Contact</a></li>
+                <li><a href="#feedBACK">Feedback</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+    <!-- LEARN DATA STRUCTURES SECTION -->
+    <div class="service-swipe">
+        <div class="diffSection" id="learnds_section">
+            <center>
+                <p style="font-size: 50px; padding: 100px; padding-bottom: 40px; color: #fff;">LEARN DATA STRUCTURES
+                    THROUGH VISUALIZATION</p>
+            </center>
+        </div>
+
+        <a href="stack_index.html">
+            <div class="s-card"><img src="learnds_images/learn_stack.PNG" width="130px" height="130px">
+                <p>STACK</p>
+            </div>
+
+            <a href="sorting_index.html">
+                <div class="s-card"><img src="learnds_images/learn_sorting.PNG" width="130px" height="130px">
+                    <p>SORTING</p>
+                </div>
+            </a>
+
+        </a>
+        <a href="linear_index.html">
+            <div class="s-card"><img src="learnds_images/leran_search.PNG " width="100px" height="100px">
+                <p>LINEAR SEARCH</p>
+            </div>
+        </a>
+        <a href="binary_index.html">
+            <div class="s-card"><img src="learnds_images/learn_binary.PNG" width="120px" height="120px">
+                <p>BINARY SEARCH</p>
+            </div>
+        </a>
+
+        <a href="link_index.html">
+            <div class="s-card"><img src="learnds_images/learn_link.PNG" width="500px" height="80px">
+                <p>LINKED LIST</p>
+            </div>
+        </a>
+        <a href="#contactus_section">
+            <div class="s-card"><img src="images/icon/discussion.png" width="100px" height="100px">
+                <p>DISCUSSION WITH US</p>
+            </div>
+        </a>
+    </div>
+
+
+    <!-- STUDY MATERIALS-->
+
+
+    <div class="studysection" id="study_section">
+        <span>
+            <br>
+            <br>
+            <br>
+            <center style="color: white;">STUDY MATERIALS FOR LEARNING DATA STRUCTURES</center>
+        </span>
+        <br>
+        <div class="course">
+            <center>
+                <div class="cbox">
+                    <div class="det"><a href="study_materials/ds_basic.pdf"><img src="images/courses/data.png">BASIC
+                            DS CONCEPTS</a></div>
+                    <div class="det"><a href="study_materials/algorithms.pdf"><img
+                                src="images/courses/paper.png">ALGORITHMS</a></div>
+                    <div class="det"><a href="study_materials/linear.pdf"><img src="images/courses/book.png">LINEAR
+                            SEARCH</a>
+                    </div>
+                    <div class="det"><a href="study_materials/12-BinarySearch.pdf"><img
+                                src="images/courses/d1.png">BINARY
+                            SEARCH</a>
+                    </div>
+
+                    <div class="det"><a href="study_materials/linked.pdf"><img src="images/courses/d1.png">LINKED
+                            LIST</a>
+                    </div>
+                </div>
+            </center>
+            <div class="cbox">
+                <div class="det"><a href="study_materials/stack.pdf"><img src="images/courses/computer.png">STACK</a>
+                </div>
+
+                <div class="det"><a href="study_materials/queue_pdf.pdf"><img src="images/courses/algo.png">QUEUE</a>
+                </div>
+                <div class="det det-last"><a href="study_materials/Tree.pdf"><img
+                            src="images/courses/projects.png">Trees</a></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ABOUT -->
+    <div class="diffSection" id="about_section">
+        <center>
+            <br>
+            <p style="font-size: 50px; padding: 100px; color: white;">About Us</p>
+        </center>
+        <div class="about-content">
+            <div class="side-image">
+                <img class="sideImage" src="learnds_images/about_us.PNG">
+            </div>
+            <div class="side-text">
+                <h2>What you think about us ? 😎</h2>
+                <p>Education is the process of facilitating learning, or the acquisition of knowledge, skills,
+                    values,
+                    beliefs, and habits. Educational methods include teaching, training, storytelling,
+                    discussion
+                    and
+                    directed research.<br> We are providing you a new way to teach Data Strutures and algorithms
+                    through
+                    Visualization.
+                    That makes easier to get practical knowledge and helps you to solve real world problems
+                    easily.
+                    We
+                    are providing you Visualization of different
+                    Data Structures like Stack , Linked list , Linear & Binary search, Sorting. So through this
+                    you
+                    can
+                    get an exact idea about it.
+                    Stay tuned on website and Learn More!! 😎
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        <!-- PRACTICE TAB SECTION  -->
+        <div class="diffSection" id="team_section">
+            <center>
+                <p style="font-size: 50px; padding-top: 100px; padding-bottom: 60px;color: white;"><br>
+                    <BR> <BR> PRACTICE MAKES MAN PERFECT
+                    😎
+                    PRACTICE HERE!!🎉
+                </p>
+            </center>
+            <div class="totalcard">
+                <div class="card">
+                    <center><img src="learnds_images/Practice_tab.PNG"></center>
+                    <center>
+                        <div class="card-title">First, solve the problem. Then, write the code from here!! 😎</div>
+                        <div id="detail">
+                            <p>“ Any fool can write code that a computer can understand. Good programmers write code
+                                that
+                                humans can understand 😎 "</p>
+
+                        </div>
+                        <div class="duty"></div>
+                        <a href="Compiler_index.html" target="_blank"><button class="btn-practice">CLICK HERE TO
+                                CODE!!
+                            </button></a>
+                </div>
+                </center>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- CONTACT US -->
+    <div class="diffSection" id="contactus_section">
+        <center>
+            <p style="font-size: 50px; padding: 100px; color: white;">Contact Us</p>
+        </center>
+        <div class="csec"></div>
+        <div class="back-contact">
+            <div class="cc">
+                <form action="mailto:roshank9419@gmail.com" method="post" enctype="text/plain">
+                    <label>First Name <span class="imp">*</span></label><label style="margin-left: 185px">Last Name
+                        <span class="imp">*</span></label><br>
+                    <center>
+                        <input type="text" name="" style="margin-right: 10px; width: 175px" required="required"><input
+                            type="text" name="lname" style="width: 175px" required="required"><br>
+                    </center>
+                    <label>Email <span class="imp">*</span></label><br>
+                    <input type="email" name="mail" style="width: 100%" required="required"><br>
+                    <label>Message <span class="imp">*</span></label><br>
+                    <input type="text" name="message" style="width: 100%" required="required"><br>
+                    <label>Additional Details</label><br>
+                    <textarea name="addtional"></textarea><br>
+                    <button type="submit" id="csubmit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FEEDBACK -->
+    <div class="title2" id="feedBACK">
+        <span style="color: white;">Give Feedback</span>
+        <div class="shortdesc2">
+            <p style="color: white;">Please share your valuable feedback to us</p>
+        </div>
+    </div>
+
+    <div class="feedbox">
+        <div class="feed">
+            <form action="mailto:roshank9419@gmail.com" method="post" enctype="text/plain">
+                <label>Your Name</label><br>
+                <input type="text" name="" class="fname" required="required"><br>
+                <label>Email</label><br>
+                <input type="email" name="mail" required="required"><br>
+                <label>Additional Details</label><br>
+                <textarea name="addtional"></textarea><br>
+                <button type="submit" id="csubmit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sliding Information -->
+    <marquee style="background: linear-gradient(to right, #FA4B37, #DF2771); margin-top: 50px;" direction="left"
+        onmouseover="this.stop()" onmouseout="this.start()" scrollamount="20">
+        <div class="marqu">“Education is the passport to the future, for tomorrow belongs to those who prepare for
+            it
+            today.” “Your attitude, not your aptitude, will determine your altitude.” “If you think education is
+            expensive, try ignorance.” “The only person who is educated is the one who has learned how to learn …and
+            change.”</div>
+    </marquee>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <img src="images/icon/logo - Copy.png" style="width: 200px;">
+                   <h1 style="color: #fff">Pratik Nivalkar</h1>
+                   <br>
+                <div class="logo"></div>
+                <div class="social-media">
+                    <a href="#"><img src="images/icon\fb.png"></a>
+                    <a href="#"><img src="images/icon\insta.png"></a>
+                    <a href="#"><img src="images/icon\tt.png"></a>
+                    <a href="#"><img src="images/icon\ytube.png"></a>
+                    <a href="#"><img src="images/icon\linkedin.png"></a>
+                </div><br><br>
+                <p class="rights-text">Copyright © 2022 All Rights Reserved.
+                </p>
+                <br>
+                <p><img src="images/icon/phone.png"> 9004005280 <br><img src="images/icon/mail.png">&nbsp;
+                    nivalkarpratik12@gmail.com</p>
+            </div>
+            <div class="right-col">
+                <h1 style="color: #fff">Our Newsletter</h1>
+                <div class="border"></div><br>
+                <p>Enter Your Email to get our News and updates.</p>
+                <form class="newsletter-form">
+                    <input class="txtb" type="email" placeholder="Enter Your Email">
+                    <input class="btn" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
