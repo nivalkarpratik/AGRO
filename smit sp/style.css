@@ -1,0 +1,22 @@
+.nav-item{
+	font-size: 25px ;
+}
+
+.navbar-brand{
+	font-size :35px;
+}
+
+.image{
+	background-image: url('iceland-1579952369062-8254.jpg');
+	background-size: cover ;
+	height: 100vh ;
+	width: 100% ;
+}
+
+.collapse navbar-collapse{
+	width:1110px;
+	background-color:grey;
+	margin:auto;
+	overflow:auto;
+
+}
